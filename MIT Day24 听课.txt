@@ -1,0 +1,374 @@
+Day3:
+Take-home message:
+Computer only does what promagramer told
+simple object: type 
+simple operation
+
+Today:
+String
+- new object type 
+	- concatenate: put string together 
+	- ()* #: repeat string by # of time 
+	- , add a space; + one big string
+- input() --> user type in become a string
+- cast: int(string) --> int type
+
+Comparion int, float, string
+	- = assignment; == comparison 
+	- logic operations on bool
+
+
+How to brach 
+- Control Flow (3 ways: if, if...else, if....elif...else)
+	- if: true or false, false keep going (code block, indentation-4 spaces)
+	- if...else: not true, operate else; chose one direction only
+	- if...elif...else: more than one chose; more than one is true, operate the first one
+
+Repeat 
+- Loops: 
+1. while (condition, expression-code blcok-operate when condition is true)£¬while-counter
+2. for (for variable in range, limitation: variable start at 5)
+- control+c --> stop infinite loop; range (start, stop, step), start-include, stop not
+3. break skip the remaining
+- comparison: for - better use when know the # of time, use counter, for can write into while loop
+
+
+Day 5 String Manipulation, guess and check, approximations, bisection
+
+Last time:
+two new context: braching, loops
+
+Today
+String
+- function: procedure
+	- len(): how many character in string
+	- indexing, negative is also availiable such as -1 = last character; beyond the limitation-->error
+	- slice start:stop:step (similar as range last class), not take stop position; :: --> list the string; ::-1-->list backward the string
+- string immutable 
+
+For loop
+- loop variable, for variable in range ()
+- readable vs pythonable 
+- ROBORT example
+
+First part (previous summary: lecture 1-3): 
+Int, floats, booleans
+Mathmatical, operations
+String, manipulation 
+Conditionals and braching
+Loops
+
+Second part:
+Algorithms:
+1. Guess-and-check
+- systematically, guess value
+- cube example
+
+2. Approximation
+- epsilon accuration vs. speed, guess until less than epsilon, guess + increament; epsilon may be small to reach-->become infinite -->solve: add a condition: guess <=set#
+
+3. Bisection search
+- game: guess number 1 -->100, each time eliminate half guess; large set, better use the bisection search  
+- set the boundary, boundary change in the for loop indentation part
+- kth guess: N/2^k 1-->100 = 7 times
+- add if statement work for positive cube >=1
+
+
+Day 7 Decomposition, Abstraction, and Functions
+Previous: For loop-iterate string object, guess and check, bisection
+
+Today: Structure program 
+Function - one file each code (perviously)
+	- scaling up, function works well
+	- how many functions, not the length of codes is important 
+	- example, project = function, abstraction idea, not need to know how it work but still can use it; several 'projects' work together = decomposition=modules 
+	- character: name, parameters, docstring ('''), body, returns
+	- function - function call
+	- def: define a function; docstring: what input, what return; return: some value, expression to express
+
+Modules - break up code, reusable 
+	- classes, own object type
+
+Abstraction - function specificity
+	- what input to put. what does. what the output
+
+Scope: - mapping a name of function 
+	- passing the value into the function 
+	- global scope --> temp scope (input --> output --> return back to global)
+
+
+No return statement? Python auto return none (absence of value) --> a special type
+
+Python everythin is an object --> function also = parameter 
+
+Scope example:
+	- variable scope work over global
+	- cannot increament inside function & redefine value outside (variable scope)
+	- www.pythontutor.com --> see detailed scope
+	- make a function call --> new scope
+	- return --> give value back to the upper scope --> get rid of the lower scope 
+
+
+List 
+	- iterating over a list: pythonic
+	- add element: L.append() --> mutate the list;  L.extend(); del(L[index]); L.pop() --> end element --> return value is the remove one; L.remove(2) --> first element 2
+	- . -->operation, applying a function can only work for a certain object --> object.function()
+	- sting to list --> list(s); s.split(); list to string --> ''.join()
+	- sorted(), not mutate, return sorted list; L.sort() --> return nothing, mutate; L.reverse()
+	- L[:] --> copy the new list; otherwise if L=A, one list change --> all change -->side affect 
+	- avoid iteration on the orignal list
+
+
+Day 11 Recursion and Dictionaries
+Prof. Eric Grimson
+
+Previous: 1. tuples- immutable
+	2. list - mutable
+	 - aliasing, cloning
+	 - mutability side effect
+
+Today: - recursion, dictionary 
+
+Recursion:
+	- What is recursion? Repeat items; reduce to a small version
+	- function calls itself
+	- state variable
+	- state by an iteration number, return a value of computation 
+	- find the base statement
+	
+Recursion (continue):
+	- two base case 
+	- non-numberic 
+Dictionary: 
+	- same length of each list --> one data structure 
+	- (); key1:var1
+	- add name[key1]=var1; test; del
+	- get an iterable name.keys(); name.values()
+	- value can be anything; keys need to be unique, immutable (int, string, tuples)
+
+
+Day 13
+list-ordered vs. dict-matches keys to values
+3 examples: third one, memorization
+
+7. Testing, Debugging, Exceptions and Assertions
+- write code in different block, module 
+- testing: input --> output (task case)
+
+Test: 
+	- 1. unit test; 2. regression testing; 3. integration testing 
+	- black box testing (Specification) vs. glass box testing (Code); 
+
+Day 14 continue lecture 7
+- Glass box testing: could be a big test, have guidelines: branches, for and while loops
+- print statement really help to test hypothesis
+- bisection method- debug
+
+Debug Step:
+	- scientific method: look the data, test hypothesis 
+	- IndexError, TypeError, NameError, TypeError, SyntaxError
+	- Logic Error are the hard part: think, draw and explain
+	- debug function by function 
+
+Second part: error message:
+	- Exception, handler - try ... except ... 
+	- exception statement handler the error
+	- except IndexError: print () --> specific point
+	- else block excute, try body completes with no exception; finally block, always excute
+	- What to do with exception: 1. faily silently; 2. "error" value --> late check, not good; 3. signal error --> raise exception 
+
+
+Day 15 continue lecture 7 + start lecture 8
+Raise exception:
+	- try: ... except ... 
+	- except block can contain return statement
+Assertion:
+	- raise an AssertionError
+	- example: assert XX ==0, 'zero'
+	- If assertion false, stop the program at the point is wrong 
+
+Lecture 8: Object oriented programming 
+Object: 
+	- data representation, has a certain type
+	- creat, manipulate, destroy 
+	- data abstraction: internal representation, what way to interface (manipulate)
+	- bundle the data: reusable + used for the future 
+
+Inplementation:
+	- creat a class --> new instance --> new object
+	- define own type of object
+
+
+Day 16 Lecture 8 continue 
+Object:
+	- example: x,y, point
+	- class coordinate (object): 
+		special method called_init(self, x, y)
+			self. x = x
+			self. y = y
+		def distance (self, other):
+			return XX
+	- c = coordinate(x,y) -->c = self
+	- self --> use it to refer to any instance
+- two way: 
+	1. object.name of method(parameter-not include self)
+	2. name of class.name of method(parameter incude self)
+	- define _str_method --> tell python print the object (return 'xxx'+self.x)
+
+
+Day 17 Lecture 8 continue + Lecture 9 start 
+Wrap-up: 
+	- isinstance --> check the object if it belongs to a specific class
+	- special operators*
+	-  Fraction example
+
+Lecture 9 Python Classes and Inheritance
+Pervious: 
+	- object orient programming: python class
+	- abstract data type: creat own type
+Today:
+	- First part: some examples about classes
+	- Second part: Inheritatance
+
+Classes
+	- self variable --> refer to any instance 
+	- data attribute --> self. XXX
+	- Classes - Objects - attributes (data -->repressent & procedure = object-->how other use it)
+	- class definition + name + class parent 
+		- special method (self, data)
+			- instance variable
+
+Day 18 Lecture 9 Continue 
+Animal example from last class:
+	- getter (return the the attribute) & setter (return to what pass in) --> need to be used outside classes (prevent bug)
+	- access data, write to data, create data attributes, allow but not recommend
+	- default argument 
+	- () always use other than self
+
+- Layer of code: object orient --> Hierarchies
+Animal example continue:
+	- class Cat (Animal) --> animal is the parent class which pass all the attributes to Cat class
+	- cat class can also override the parent class
+	- class Person (Animal) --> add one attribute, call the animal condinator
+	
+
+Day 19 Lecture 9 Continue
+Animal example continue: 
+	- another class: student, subclass of person 
+	- random.random()-->[0,1) -->if... else random speak 
+
+Class variables: 
+	- instance variables --> self. name
+	- class variables --> shared between all instances of a class 
+	- tag = 1 --> class varible initiate to 1 --> self. rid = Rabbit.tag (Rabbit class name) // Rabbit.tag += 1 --> keep updating tag number (feedback loop)
+	- zfill(3) --> 001 to represent 1
+	- compare the id, boolean function
+
+**Data-oriented programming is the idea of creating your own collections of data where you can organize the informatiion in a very consistance maner (same data attributes and same methods --> decomposion and abstraction)
+
+Day 20 Lecture 10 Start
+Recall: fundamental computation, data structure, algorithms (liner, iterative, recursive & class)
+
+- How efficient?
+	- order of growth
+	- big O
+	- diff class of algorithms 
+
+- How to evaluate:
+	- run a timer, count operations, order of growth 
+	- first two depend on implementation, first one also depend on time, middle one not clear on what operation to count 
+
+Order of growth:
+	- focus on the size of large
+	- efficiency ~ size of input: double the size, what gonna to affect the speed 
+
+Day 20 Lecture 10 Continue 
+Order of growth:
+	- most time consuming
+	- notation: Big O notation (Omicron), describe worst case: look at the largest piece in the run time
+	- Big O definition: "an upper bound on the growth as a function of the size of the input in the worst case"
+	- double n, the number of time is double
+	- count step: while loop: operate + store = 2 steps
+	- dominat terms: exponentials
+	- for ... in loop *2 = O(n^2)
+	- Complexity growth: O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n)
+	- less complexity, betterr code 
+
+
+Day 21 Lecture 10 Continue + Lecture 11 Start
+- Constant operation 
+	- indirection
+	- weather sort or not --> order is the same
+	- nested loop & intersection
+
+- Recap:
+	- think backward direction, how a choice impact the effiency 
+	- complexity classes: constant, logarithmic, linear, loglinear, polynomial, exponential (6)
+
+Binary search 
+	- ¡Öbisection search
+	- sorted effciency quick, order same 
+
+Day 22 Lecture 11 Continue
+Binary search continue:
+	- cutting down the size by 2
+	- complexity? --> O(log n) - where n is len(L)
+	- copy the list or point (n log n vs log n)
+	- # of digit --> log
+	- merge sort
+
+Polynomial complexity
+	- nested loop: linear * linear = loop in a loop
+
+Exponential complexity:
+	- more than one recursive call 
+	- tower of Honai
+
+
+Day 23 Lecture 11 Continue + Lecture 12 Start  
+Power set:
+	- up to n element 
+	- recursive call --> solve small problem for big one
+	- exponential O(2^n)
+
+Fibonacci
+	- golden ratio of exponential 
+
+Sorting and searching 
+Search:
+	- linear (unsorted) & bisection (sorted)
+	- sorting at least order n
+	- searching multiple time, sort time can be ignore
+
+Day 24 Lecture 12 continue
+Bubble sort 
+	- compare consecutive pairs
+	- swap elements, the largest unsorted in the end
+	- quadratics 
+
+Selection sort
+	- smallest element put in the first 
+	- comparison prefix + surffix
+	- quadratics
+
+Merge sort
+	- spilt into two list, then merge
+	- conque merge back together
+	- comparison less when two list merge
+	- recursive
+	- n log n
+
+Summary
+	- represent knowledge: data structure
+	- metaphors: loops, recursion
+	- abstraction: have a contract
+	- Classes and method
+	- Class of algorithm and complexity 
+
+** 3A rule: abstractions, algorthms, automated execution
+	
+
+
+
+ 
+
